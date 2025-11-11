@@ -16,7 +16,7 @@ const FeedbackForm = () => {
       if(!name || !message){
            toast.error("Name and Message are required")
         }
-    const res = await axios.post("/api/feedback", {
+    const res = await axios.post("https://feedback-form-ochre-nu.vercel.app/api/feedback", {
       name,
       message
     })
