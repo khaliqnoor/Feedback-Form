@@ -9,7 +9,10 @@ const app = express()
 
 dotenv.config()
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: "https://feedback-form-client-pi.vercel.app", // or "*"
+  methods: ["POST", "GET"],
+}));
 await connectDb()
 
 app.use('/api', router)
